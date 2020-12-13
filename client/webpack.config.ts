@@ -28,7 +28,10 @@ const conf: Configuration = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: "./",
+    port: 8080,
+    proxy: {
+      "/api": "http://localhost:3000",
+    },
   },
   output: {
     filename: "bundle.js",
